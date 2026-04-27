@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commis — Legal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #3D2B1F; background: #FFF8F0; padding: 2rem 1rem; }
+    .container { max-width: 720px; margin: 0 auto; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 2rem; }
+    .lang-buttons { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .lang-btn { background: transparent; border: 2px solid #C67B4B; color: #C67B4B; padding: 0.35rem 0.7rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+    .lang-btn.active, .lang-btn:hover { background: #C67B4B; color: white; }
+    .doc-buttons { display: flex; gap: 0.4rem; }
+    .doc-btn { background: transparent; border: 2px solid #8B5E3C; color: #8B5E3C; padding: 0.35rem 0.9rem; border-radius: 8px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: all 0.2s; }
+    .doc-btn.active, .doc-btn:hover { background: #8B5E3C; color: white; }
+    h1 { font-size: 1.8rem; color: #8B5E3C; margin-bottom: 0.5rem; }
+    .subtitle { color: #8C7B6B; margin-bottom: 2rem; }
+    h2 { font-size: 1.2rem; color: #C67B4B; margin-top: 2rem; margin-bottom: 0.5rem; }
+    p, li { margin-bottom: 0.5rem; }
+    ul { padding-left: 1.5rem; }
+    .section { margin-bottom: 1.5rem; }
+    a { color: #C67B4B; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="controls">
+    <div class="lang-buttons">
+      <button class="lang-btn active" onclick="setLang('fr')">&#127467;&#127479; FR</button>
+      <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
+      <button class="lang-btn" onclick="setLang('de')">&#127465;&#127466; DE</button>
+      <button class="lang-btn" onclick="setLang('es')">&#127466;&#127480; ES</button>
+    </div>
+    <div class="doc-buttons">
+      <button class="doc-btn active" onclick="setDoc('privacy')">Privacy Policy</button>
+      <button class="doc-btn" onclick="setDoc('terms')">Terms of Service</button>
+    </div>
+  </div>
+  <div id="privacy-fr" class="doc-section">
+    <h1>Politique de confidentialit&#233;</h1>
+    <p class="subtitle">Commis &#8212; Assistant p&#226;tisserie<br>Derni&#232;re mise &#224; jour : 12 avril 2026</p>
+    <div class="section"><h2>1. Qui sommes-nous</h2><p>Commis est d&#233;velopp&#233; et publi&#233; par <strong>ARDigital</strong>, bas&#233; en France. Pour toute question : <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>2. Donn&#233;es collect&#233;es</h2><p>Commis est con&#231;u avec une approche <strong>privacy-first</strong>. Nous collectons le minimum de donn&#233;es :</p><ul><li><strong>Photos de recettes</strong> &#8212; Envoy&#233;es &#224; l'API Google Gemini pour analyse en temps r&#233;el. Non stock&#233;es sur nos serveurs.</li><li><strong>Messages du chat</strong> &#8212; Envoy&#233;s &#224; l'API Google Gemini. Non stock&#233;s sur nos serveurs.</li><li><strong>Analytics anonymes</strong> &#8212; Firebase Analytics collecte des donn&#233;es d'utilisation anonymes sans identifiant personnel.</li><li><strong>Rapports de crash</strong> &#8212; Sentry collecte des rapports anonymes (type d'appareil, version OS uniquement).</li><li><strong>Pr&#233;f&#233;rences locales</strong> &#8212; Vos r&#233;glages et recettes sont stock&#233;s uniquement sur votre appareil via SQLite.</li></ul></div>
+    <div class="section"><h2>3. Donn&#233;es que nous ne collectons PAS</h2><ul><li>Aucune cr&#233;ation de compte requise</li><li>Aucun nom, email ou information de contact</li><li>Aucune donn&#233;e de localisation</li><li>Aucun identifiant publicitaire</li><li>Aucune donn&#233;e partag&#233;e &#224; des fins publicitaires</li></ul></div>
+    <div class="section"><h2>4. Services tiers</h2><ul><li><strong>Google Gemini API</strong> &#8212; <a href="https://ai.google.dev/terms">Conditions Google AI</a></li><li><strong>Firebase Analytics</strong> &#8212; <a href="https://firebase.google.com/support/privacy">Confidentialit&#233; Firebase</a></li><li><strong>Sentry</strong> &#8212; <a href="https://sentry.io/privacy/">Confidentialit&#233; Sentry</a></li><li><strong>RevenueCat</strong> &#8212; <a href="https://www.revenuecat.com/privacy">Confidentialit&#233; RevenueCat</a></li></ul></div>
+    <div class="section"><h2>5. Stockage et s&#233;curit&#233;</h2><p>Toutes vos recettes et pr&#233;f&#233;rences sont stock&#233;es localement sur votre appareil. Les photos transitent via HTTPS/TLS et ne sont pas conserv&#233;es apr&#232;s traitement.</p></div>
+    <div class="section"><h2>6. Vos droits (RGPD)</h2><ul><li><strong>Acc&#232;s</strong> &#8212; Demander quelles donn&#233;es nous d&#233;tenons</li><li><strong>Suppression</strong> &#8212; D&#233;sinstaller l'app supprime toutes les donn&#233;es locales</li><li><strong>Portabilit&#233;</strong> &#8212; Vos recettes sont accessibles sur votre appareil</li><li><strong>Opposition</strong> &#8212; D&#233;sactiver les analytics en nous contactant</li></ul><p>Contact : <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>7. Vie priv&#233;e des enfants</h2><p>Commis ne collecte pas sciemment de donn&#233;es d'enfants de moins de 16 ans.</p></div>
+    <div class="section"><h2>8. Modifications</h2><p>Nous pouvons mettre &#224; jour cette politique. La derni&#232;re version est toujours disponible &#224; cette URL.</p></div>
+    <div class="section"><h2>9. Contact</h2><p><strong>ARDigital</strong><br>France<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="privacy-en" class="doc-section hidden">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Commis &#8212; Baking Assistant<br>Last updated: April 12, 2026</p>
+    <div class="section"><h2>1. Who we are</h2><p>Commis is developed by <strong>ARDigital</strong>, based in France. Contact: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>2. Data we collect</h2><p>Commis is designed with a <strong>privacy-first</strong> approach:</p><ul><li><strong>Recipe photos</strong> &#8212; Sent to Google Gemini API for real-time analysis. Not stored on our servers.</li><li><strong>Chat messages</strong> &#8212; Sent to Google Gemini API. Not stored on our servers.</li><li><strong>Anonymous analytics</strong> &#8212; Firebase Analytics collects anonymous usage data.</li><li><strong>Crash reports</strong> &#8212; Sentry collects anonymous reports (device type and OS version only).</li><li><strong>Local preferences</strong> &#8212; Your settings and recipes are stored locally via SQLite.</li></ul></div>
+    <div class="section"><h2>3. Data we do NOT collect</h2><ul><li>No account creation required</li><li>No name, email, or personal contact information</li><li>No location data</li><li>No advertising identifiers</li><li>No data shared for advertising</li></ul></div>
+    <div class="section"><h2>4. Third-party services</h2><ul><li><strong>Google Gemini API</strong> &#8212; <a href="https://ai.google.dev/terms">Google AI Terms</a></li><li><strong>Firebase Analytics</strong> &#8212; <a href="https://firebase.google.com/support/privacy">Firebase Privacy</a></li><li><strong>Sentry</strong> &#8212; <a href="https://sentry.io/privacy/">Sentry Privacy</a></li><li><strong>RevenueCat</strong> &#8212; <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy</a></li></ul></div>
+    <div class="section"><h2>5. Data storage and security</h2><p>All your recipes are stored locally. Photos are transmitted via HTTPS/TLS and not retained after processing.</p></div>
+    <div class="section"><h2>6. Your rights (GDPR)</h2><ul><li><strong>Access</strong> &#8212; Request what data we hold</li><li><strong>Deletion</strong> &#8212; Uninstalling the app deletes all local data</li><li><strong>Portability</strong> &#8212; Your recipes are accessible on your device</li><li><strong>Objection</strong> &#8212; Disable analytics by contacting us</li></ul><p>Contact: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>7. Children's privacy</h2><p>Commis does not knowingly collect data from children under 16.</p></div>
+    <div class="section"><h2>8. Changes</h2><p>We may update this policy. The latest version is always available at this URL.</p></div>
+    <div class="section"><h2>9. Contact</h2><p><strong>ARDigital</strong><br>France<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="privacy-de" class="doc-section hidden">
+    <h1>Datenschutzerkl&#228;rung</h1>
+    <p class="subtitle">Commis &#8212; Backassistent<br>Zuletzt aktualisiert: 12. April 2026</p>
+    <div class="section"><h2>1. Wer wir sind</h2><p>Commis wird von <strong>ARDigital</strong> mit Sitz in Frankreich entwickelt. Kontakt: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>2. Erhobene Daten</h2><p>Commis wurde nach dem Prinzip <strong>Privacy by Design</strong> entwickelt:</p><ul><li><strong>Rezeptfotos</strong> &#8212; Werden zur Echtzeit-Analyse an Google Gemini API gesendet. Nicht gespeichert.</li><li><strong>Chat-Nachrichten</strong> &#8212; Werden an Google Gemini API gesendet. Nicht gespeichert.</li><li><strong>Anonyme Analysen</strong> &#8212; Firebase Analytics erhebt anonyme Nutzungsdaten.</li><li><strong>Absturzberichte</strong> &#8212; Sentry erfasst anonyme Berichte.</li><li><strong>Lokale Einstellungen</strong> &#8212; Ihre Einstellungen werden lokal via SQLite gespeichert.</li></ul></div>
+    <div class="section"><h2>3. Nicht erhobene Daten</h2><ul><li>Keine Kontoerstellung erforderlich</li><li>Kein Name, E-Mail oder pers&#246;nliche Kontaktdaten</li><li>Keine Standortdaten</li><li>Keine Werbe-IDs</li></ul></div>
+    <div class="section"><h2>4. Drittanbieter-Dienste</h2><ul><li><strong>Google Gemini API</strong> &#8212; <a href="https://ai.google.dev/terms">Google AI Nutzungsbedingungen</a></li><li><strong>Firebase Analytics</strong> &#8212; <a href="https://firebase.google.com/support/privacy">Firebase Datenschutz</a></li><li><strong>Sentry</strong> &#8212; <a href="https://sentry.io/privacy/">Sentry Datenschutz</a></li><li><strong>RevenueCat</strong> &#8212; <a href="https://www.revenuecat.com/privacy">RevenueCat Datenschutz</a></li></ul></div>
+    <div class="section"><h2>5. Datensicherheit</h2><p>Alle Rezepte werden lokal gespeichert. Fotos werden per HTTPS/TLS &#252;bertragen und nicht aufbewahrt.</p></div>
+    <div class="section"><h2>6. Ihre Rechte (DSGVO)</h2><ul><li><strong>Auskunft</strong> &#8212; Anfrage zu gespeicherten Daten</li><li><strong>L&#246;schung</strong> &#8212; Deinstallation l&#246;scht alle lokalen Daten</li><li><strong>Portabilit&#228;t</strong> &#8212; Ihre Rezepte sind auf Ihrem Ger&#228;t zug&#228;nglich</li><li><strong>Widerspruch</strong> &#8212; Analysen deaktivieren durch Kontaktaufnahme</li></ul><p>Kontakt: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>7. Kinderdatenschutz</h2><p>Commis erhebt wissentlich keine Daten von Kindern unter 16 Jahren.</p></div>
+    <div class="section"><h2>8. &#196;nderungen</h2><p>Wir k&#246;nnen diese Richtlinie aktualisieren.</p></div>
+    <div class="section"><h2>9. Kontakt</h2><p><strong>ARDigital</strong><br>Frankreich<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="privacy-es" class="doc-section hidden">
+    <h1>Pol&#237;tica de Privacidad</h1>
+    <p class="subtitle">Commis &#8212; Asistente de Reposter&#237;a<br>&#218;ltima actualizaci&#243;n: 12 de abril de 2026</p>
+    <div class="section"><h2>1. Qui&#233;nes somos</h2><p>Commis es desarrollado por <strong>ARDigital</strong>, con sede en Francia. Contacto: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>2. Datos que recopilamos</h2><p>Commis est&#225; dise&#241;ado con un enfoque de <strong>privacidad ante todo</strong>:</p><ul><li><strong>Fotos de recetas</strong> &#8212; Enviadas a Google Gemini API para an&#225;lisis. No almacenadas.</li><li><strong>Mensajes de chat</strong> &#8212; Enviados a Google Gemini API. No almacenados.</li><li><strong>An&#225;lisis an&#243;nimos</strong> &#8212; Firebase Analytics recopila datos an&#243;nimos.</li><li><strong>Informes de fallos</strong> &#8212; Sentry recopila informes an&#243;nimos.</li><li><strong>Preferencias locales</strong> &#8212; Sus ajustes se almacenan localmente v&#237;a SQLite.</li></ul></div>
+    <div class="section"><h2>3. Datos que NO recopilamos</h2><ul><li>No se requiere creaci&#243;n de cuenta</li><li>Ning&#250;n nombre, correo electr&#243;nico ni informaci&#243;n de contacto</li><li>Ninguna dato de ubicaci&#243;n</li><li>Ning&#250;n identificador publicitario</li></ul></div>
+    <div class="section"><h2>4. Servicios de terceros</h2><ul><li><strong>Google Gemini API</strong> &#8212; <a href="https://ai.google.dev/terms">T&#233;rminos Google AI</a></li><li><strong>Firebase Analytics</strong> &#8212; <a href="https://firebase.google.com/support/privacy">Privacidad Firebase</a></li><li><strong>Sentry</strong> &#8212; <a href="https://sentry.io/privacy/">Privacidad Sentry</a></li><li><strong>RevenueCat</strong> &#8212; <a href="https://www.revenuecat.com/privacy">Privacidad RevenueCat</a></li></ul></div>
+    <div class="section"><h2>5. Almacenamiento y seguridad</h2><p>Todas sus recetas se almacenan localmente. Las fotos se transmiten por HTTPS/TLS y no se conservan.</p></div>
+    <div class="section"><h2>6. Sus derechos (RGPD)</h2><ul><li><strong>Acceso</strong> &#8212; Solicitar qu&#233; datos tenemos</li><li><strong>Eliminaci&#243;n</strong> &#8212; Desinstalar la app elimina todos los datos locales</li><li><strong>Portabilidad</strong> &#8212; Sus recetas son accesibles en su dispositivo</li><li><strong>Oposici&#243;n</strong> &#8212; Desactivar los an&#225;lisis contact&#225;ndonos</li></ul><p>Contacto: <a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+    <div class="section"><h2>7. Privacidad de los ni&#241;os</h2><p>Commis no recopila datos de menores de 16 a&#241;os.</p></div>
+    <div class="section"><h2>8. Cambios</h2><p>Podemos actualizar esta pol&#237;tica.</p></div>
+    <div class="section"><h2>9. Contacto</h2><p><strong>ARDigital</strong><br>Francia<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="terms-fr" class="doc-section hidden">
+    <h1>Conditions G&#233;n&#233;rales d'Utilisation</h1>
+    <p class="subtitle">Commis &#8212; Assistant P&#226;tisserie<br>Derni&#232;re mise &#224; jour : 12 avril 2026</p>
+    <div class="section"><h2>1. Acceptation des conditions</h2><p>En t&#233;l&#233;chargeant ou en utilisant Commis, vous acceptez les pr&#233;sentes CGU.</p></div>
+    <div class="section"><h2>2. Description du service</h2><ul><li>Scan et analyse de recettes par IA</li><li>Convertisseur de moule avec calcul automatique des quantit&#233;s</li><li>Chat IA sp&#233;cialis&#233; en p&#226;tisserie, propuls&#233; par Google Gemini</li></ul></div>
+    <div class="section"><h2>3. Utilisation acceptable</h2><p>Il est interdit de : proc&#233;der &#224; de l'ing&#233;nierie inverse, abuser de l'API ou des quotas, utiliser l'application &#224; des fins illicites.</p></div>
+    <div class="section"><h2>4. Abonnement Premium</h2><ul><li><strong>Annuel</strong> : 39,99&#8364;/an</li><li><strong>Mensuel</strong> : 5,99&#8364;/mois</li></ul><p>L'abonnement se renouvelle automatiquement sauf r&#233;siliation avant la fin de la p&#233;riode.</p></div>
+    <div class="section"><h2>5. Quotas de l'offre gratuite</h2><ul><li>3 scans de recettes par mois</li><li>10 questions de chat par mois</li><li>Sauvegardes de recettes limit&#233;es</li></ul></div>
+    <div class="section"><h2>6. Propri&#233;t&#233; intellectuelle</h2><p>Commis et son contenu sont la propri&#233;t&#233; exclusive d'<strong>ARDigital</strong>.</p></div>
+    <div class="section"><h2>7. Limitation de responsabilit&#233;</h2><p>L'IA peut produire des r&#233;sultats inexacts. ARDigital ne garantit pas les r&#233;sultats culinaires.</p></div>
+    <div class="section"><h2>8. R&#233;siliation</h2><p>ARDigital se r&#233;serve le droit de suspendre l'acc&#232;s en cas d'utilisation abusive.</p></div>
+    <div class="section"><h2>9. Droit applicable</h2><p>Droit fran&#231;ais. Tribunaux comp&#233;tents : Paris.</p></div>
+    <div class="section"><h2>10. Contact</h2><p><strong>ARDigital</strong><br>France<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="terms-en" class="doc-section hidden">
+    <h1>Terms of Service</h1>
+    <p class="subtitle">Commis &#8212; Baking Assistant<br>Last updated: April 12, 2026</p>
+    <div class="section"><h2>1. Acceptance of Terms</h2><p>By downloading or using the Commis app, you agree to these Terms of Service.</p></div>
+    <div class="section"><h2>2. Description of Service</h2><ul><li>AI-powered recipe scanning and analysis</li><li>Pan converter with automatic quantity calculation</li><li>Specialized baking AI chat powered by Google Gemini</li></ul></div>
+    <div class="section"><h2>3. Acceptable Use</h2><p>The following are prohibited: reverse engineering, abusing the API or quotas, using the app for illegal purposes.</p></div>
+    <div class="section"><h2>4. Premium Subscription</h2><ul><li><strong>Annual</strong>: &#8364;39.99/year</li><li><strong>Monthly</strong>: &#8364;5.99/month</li></ul><p>Subscriptions auto-renew unless cancelled before the end of the current period.</p></div>
+    <div class="section"><h2>5. Free Tier Quotas</h2><ul><li>3 recipe scans per month</li><li>10 chat questions per month</li><li>Limited recipe saves</li></ul></div>
+    <div class="section"><h2>6. Intellectual Property</h2><p>The Commis app and all its content are the exclusive property of <strong>ARDigital</strong>.</p></div>
+    <div class="section"><h2>7. Limitation of Liability</h2><p>AI may produce inaccurate results. ARDigital does not guarantee culinary results.</p></div>
+    <div class="section"><h2>8. Termination</h2><p>ARDigital reserves the right to suspend access in cases of misuse.</p></div>
+    <div class="section"><h2>9. Governing Law</h2><p>French law. Disputes: courts of Paris.</p></div>
+    <div class="section"><h2>10. Contact</h2><p><strong>ARDigital</strong><br>France<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="terms-de" class="doc-section hidden">
+    <h1>Nutzungsbedingungen</h1>
+    <p class="subtitle">Commis &#8212; Backassistent<br>Zuletzt aktualisiert: 12. April 2026</p>
+    <div class="section"><h2>1. Annahme der Bedingungen</h2><p>Durch die Nutzung der App Commis stimmen Sie diesen Nutzungsbedingungen zu.</p></div>
+    <div class="section"><h2>2. Beschreibung des Dienstes</h2><ul><li>KI-gest&#252;tztes Scannen und Analysieren von Rezepten</li><li>Backformkonverter mit automatischer Mengenberechnung</li><li>Spezialisierter Back-KI-Chat auf Basis von Google Gemini</li></ul></div>
+    <div class="section"><h2>3. Zul&#228;ssige Nutzung</h2><p>Verboten sind: Reverse Engineering, Missbrauch der API, Nutzung f&#252;r illegale Zwecke.</p></div>
+    <div class="section"><h2>4. Premium-Abonnement</h2><ul><li><strong>J&#228;hrlich</strong>: 39,99&#8364;/Jahr</li><li><strong>Monatlich</strong>: 5,99&#8364;/Monat</li></ul><p>Das Abonnement verl&#228;ngert sich automatisch, sofern es nicht gek&#252;ndigt wird.</p></div>
+    <div class="section"><h2>5. Kostenlose Kontingente</h2><ul><li>3 Rezept-Scans pro Monat</li><li>10 Chat-Fragen pro Monat</li><li>Begrenzte Rezeptspeicherung</li></ul></div>
+    <div class="section"><h2>6. Geistiges Eigentum</h2><p>Die App Commis und alle Inhalte sind ausschlie&#223;liches Eigentum von <strong>ARDigital</strong>.</p></div>
+    <div class="section"><h2>7. Haftungsbeschr&#228;nkung</h2><p>Die KI kann ungenaue Ergebnisse liefern. ARDigital &#252;bernimmt keine Gew&#228;hr f&#252;r kulinarische Ergebnisse.</p></div>
+    <div class="section"><h2>8. K&#252;ndigung</h2><p>ARDigital beh&#228;lt sich das Recht vor, den Zugang bei Missbrauch zu sperren.</p></div>
+    <div class="section"><h2>9. Anwendbares Recht</h2><p>Franz&#246;sisches Recht. Gerichtsstand: Paris.</p></div>
+    <div class="section"><h2>10. Kontakt</h2><p><strong>ARDigital</strong><br>Frankreich<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+  <div id="terms-es" class="doc-section hidden">
+    <h1>T&#233;rminos de Servicio</h1>
+    <p class="subtitle">Commis &#8212; Asistente de Reposter&#237;a<br>&#218;ltima actualizaci&#243;n: 12 de abril de 2026</p>
+    <div class="section"><h2>1. Aceptaci&#243;n de los T&#233;rminos</h2><p>Al usar la aplicaci&#243;n Commis, acepta estos T&#233;rminos de Servicio.</p></div>
+    <div class="section"><h2>2. Descripci&#243;n del Servicio</h2><ul><li>Escaneo y an&#225;lisis de recetas con IA</li><li>Conversor de moldes con c&#225;lculo autom&#225;tico</li><li>Chat IA especializado, impulsado por Google Gemini</li></ul></div>
+    <div class="section"><h2>3. Uso Aceptable</h2><p>Est&#225; prohibido: realizar ingenier&#237;a inversa, abusar de la API, usar la app con fines ilegales.</p></div>
+    <div class="section"><h2>4. Suscripci&#243;n Premium</h2><ul><li><strong>Anual</strong>: 39,99&#8364;/a&#241;o</li><li><strong>Mensuel</strong>: 5,99&#8364;/mes</li></ul><p>La suscripci&#243;n se renueva autom&#225;ticamente salvo cancelaci&#243;n.</p></div>
+    <div class="section"><h2>5. Cuotas de la Oferta Gratuita</h2><ul><li>3 escaneos de recetas por mes</li><li>10 preguntas de chat por mes</li><li>Guardado limitado de recetas</li></ul></div>
+    <div class="section"><h2>6. Propiedad Intelectual</h2><p>La aplicaci&#243;n Commis y todo su contenido son propiedad exclusiva de <strong>ARDigital</strong>.</p></div>
+    <div class="section"><h2>7. Limitaci&#243;n de Responsabilidad</h2><p>La IA puede producir resultados inexactos. ARDigital no garantiza los resultados culinarios.</p></div>
+    <div class="section"><h2>8. Rescisi&#243;n</h2><p>ARDigital se reserva el derecho de suspender el acceso en caso de uso indebido.</p></div>
+    <div class="section"><h2>9. Ley Aplicable</h2><p>Legislaci&#243;n francesa. Tribunales de Par&#237;s.</p></div>
+    <div class="section"><h2>10. Contacto</h2><p><strong>ARDigital</strong><br>Francia<br><a href="mailto:ardigital.make@gmail.com">ardigital.make@gmail.com</a></p></div>
+  </div>
+</div>
+<script>
+  var currentLang = 'fr';
+  var currentDoc = 'privacy';
+  function setLang(lang) {
+    currentLang = lang;
+    updateView();
+    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+    var btns = document.querySelectorAll('.lang-btn');
+    var idx = ['fr','en','de','es'].indexOf(lang);
+    if (idx >= 0) btns[idx].classList.add('active');
+  }
+  function setDoc(doc) {
+    currentDoc = doc;
+    updateView();
+    document.querySelectorAll('.doc-btn').forEach(function(b) { b.classList.remove('active'); });
+    var btns = document.querySelectorAll('.doc-btn');
+    if (doc === 'privacy') btns[0].classList.add('active');
+    else btns[1].classList.add('active');
+  }
+  function updateView() {
+    document.querySelectorAll('.doc-section').forEach(function(el) { el.classList.add('hidden'); });
+    var target = document.getElementById(currentDoc + '-' + currentLang);
+    if (target) target.classList.remove('hidden');
+  }
+</script>
+</body>
+</html>
